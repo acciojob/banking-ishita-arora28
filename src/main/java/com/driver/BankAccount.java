@@ -26,8 +26,8 @@ public class BankAccount {
                 digits--;
             }
             int temp=0;
-        for(char ch:acnNo){
-            temp+=ch-'0';
+        for(int i=0;i<acnNo.length();i++){
+            temp+=acnNo.charAt(i)-'0';
         }
         if(temp==total)
             return acnNo;
