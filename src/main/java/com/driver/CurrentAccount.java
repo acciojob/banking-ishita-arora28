@@ -13,7 +13,6 @@ public class CurrentAccount extends BankAccount{
         {
             throw new Exception("Insufficient Balance");
         }
-
     }
 
     public String getTradeLicenseId() {
@@ -29,8 +28,11 @@ public class CurrentAccount extends BankAccount{
         // If the license Id is valid, do nothing
         // If the characters of the license Id can be rearranged to create any valid license Id
         // If it is not possible, throw "Valid License can not be generated" Exception
-
-
+        int n=getTradeLicenseId().length();
+        for(int i=1;i<n;i++){
+            if(this.tradeLicenseId.charAt(i)==this.tradeLicenseId.charAt(i-1))
+                throw new Exception("Valid License can not be generated");
+        }
     }
 
 }
